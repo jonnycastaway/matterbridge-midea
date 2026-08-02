@@ -16,6 +16,7 @@ import { BridgedDeviceBasicInformation, FanControl, OnOff, Thermostat, Thermosta
 import {
   isLikelyNetworkError,
   MideaCloudClient,
+  type MideaAppliance,
   MideaLanDiscovery,
   MideaMode,
   type MideaAcState,
@@ -36,6 +37,7 @@ export type MideaPlatformConfig = BasePlatformConfig & {
   username?: string;
   password?: string;
   polling_interval?: number;
+  cloudBackend?: 'auto' | 'msmarthome' | 'netHomePlus';
   devices?: MideaDeviceConfig[];
 };
 
